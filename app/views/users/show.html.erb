@@ -4,9 +4,11 @@
     <p>Bio</p>
     <p><%= @user.bio %></p>
   </div>
-  <% @user.posts.each_with_index do |post, index| %>
-    <a class="post-card-container" href= <%= user_post_path(@user, post)%>><%= render partial: "shared/post_card", locals: { post: post, index: index + 1 } %></a>
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <%= link_to user_post_path(@user, post), class: 'post-card-container' do %>
+      <%= render partial: "shared/post_card", locals: { post: post, index: index + 1 } %>
+    <% end %>
   <% end %>
-  <a href= <%= user_posts_path(user_id: @user.id) %> class="see-posts">See all posts</a>
+  <%= link_to 'See all posts', user_posts_path(user_id: @user.id), class: 'see-posts' %>
 </div>
 

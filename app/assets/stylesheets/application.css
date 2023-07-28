@@ -38,10 +38,16 @@ p {
 
 .user-card-container {
   display: flex;
-  width: 60%;
+  width: 100%;
   margin: 0 auto 2em auto;
   gap: 2em;
   justify-content: center;
+}
+
+.users-links {
+  width: 60%;
+  display: flex;
+  margin: auto;
 }
 
 .user-card {
