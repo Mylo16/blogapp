@@ -1,0 +1,13 @@
+<div class='user-content'>
+  <% @user.posts.each_with_index do |post, index|%>
+    <%= link_to user_post_path(@user, post), class: 'post-card-container2' do %>
+      <%= render partial: "shared/post_card", locals: { post: post, index: index + 1 } %>
+    <% end %>
+    <div class="comments">
+      <p class="comments-head">Comments</p>
+      <% post.recent_comments.each do |comment|%>
+        <%= render partial: "shared/comment_card", locals: { comment: comment } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

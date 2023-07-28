@@ -1,0 +1,14 @@
+<div class="user-content">
+  <%= render partial: "shared/card", locals: { user: @user } %>
+  <div class="bio">
+    <p>Bio</p>
+    <p><%= @user.bio %></p>
+  </div>
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <%= link_to user_post_path(@user, post), class: 'post-card-container' do %>
+      <%= render partial: "shared/post_card", locals: { post: post, index: index + 1 } %>
+    <% end %>
+  <% end %>
+  <%= link_to 'See all posts', user_posts_path(user_id: @user.id), class: 'see-posts' %>
+</div>
+
