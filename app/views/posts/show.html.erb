@@ -5,6 +5,12 @@
       <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter%></p>
     </div>
     <p><%= @post.text %></p>
+    <div class="like-comment">
+      <%= link_to "Comment", new_user_post_comment_path(user_id: @post.author_id, post_id: @post.id), class: 'add-comment', method: :get %>
+      <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
+        <%= form.submit "Like", class: "like-btn" %>
+      <% end %>
+    </div>
   </div>
   <div class="comments">
     <p class="comments-head">Comments</p>
@@ -12,5 +18,4 @@
       <%= render partial: 'shared/comment_card', locals: { comment: comment }%>
     <% end %>
   </div>
-  
 </div>

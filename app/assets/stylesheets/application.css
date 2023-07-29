@@ -130,6 +130,39 @@ p {
   color: white;
 }
 
+.add-post {
+  background-color: green;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/***** USER POST *****/
+
+.like-comment {
+  display: flex;
+  gap: 1em;
+  float: right;
+}
+
+.add-comment {
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  padding: 0.2em 0.4em;
+}
+
+.like-btn {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
 /***** COMMENTS *****/
 
 .comments {
