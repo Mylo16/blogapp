@@ -15,7 +15,7 @@ RSpec.describe 'Users Index', type: :system do
 
   scenario 'index shows the username of all users' do
     @users.each do |user|
-      expec(page).to have_content(user.name)
+      expect(page).to have_content(user.name)
     end
   end
 
