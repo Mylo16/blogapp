@@ -51,7 +51,7 @@ p {
 }
 
 .user-card {
-  box-shadow: 1px 5px 8px 0px rgba(0,0,0,0.82);
+  box-shadow: 1px 5px 8px 0 rgba(0, 0, 0, 0.82);
   border-radius: 10px;
   padding: 0 1em;
   width: 60%;
@@ -59,7 +59,7 @@ p {
 
 .profile-container {
   border-radius: 75px;
-  box-shadow: 1px 5px 8px 0px rgba(0,0,0,0.82);
+  box-shadow: 1px 5px 8px 0 rgba(0, 0, 0, 0.82);
 }
 
 .user-image {
