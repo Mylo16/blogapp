@@ -39,7 +39,7 @@ p {
 .user-card-container {
   display: flex;
   width: 100%;
-  margin: 0 auto 2em auto;
+  margin: auto;
   gap: 2em;
   justify-content: center;
 }
@@ -47,25 +47,25 @@ p {
 .users-links {
   width: 60%;
   display: flex;
-  margin: auto;
+  margin: 0 auto 2em auto;
 }
 
 .user-card {
-  border: 1px solid black;
+  box-shadow: 1px 5px 8px 0 rgba(0, 0, 0, 0.82);
   border-radius: 10px;
   padding: 0 1em;
   width: 60%;
 }
 
 .profile-container {
-  border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 75px;
+  box-shadow: 1px 5px 8px 0 rgba(0, 0, 0, 0.82);
 }
 
 .user-image {
   width: 150px;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 75px;
 }
 
 /***** USER POSTS *****/
@@ -79,7 +79,7 @@ p {
 
 .bio {
   border: 1px solid black;
-  margin-bottom: 2em;
+  margin: 2em 0;
   padding: 1em 2em;
   border-radius: 10px;
 }
@@ -92,13 +92,14 @@ p {
 }
 
 .post-card-container2 {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  border-bottom: none;
   padding: 1em 2em;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .post-card-container3 {
-  border: 1px solid black;
+  border: 1px solid rgb(63, 60, 60);
   padding: 1em 2em;
   border-radius: 10px;
 }
@@ -133,7 +134,7 @@ p {
 .add-post {
   background-color: green;
   padding: 0.5em;
-  margin-bottom: 1em;
+  margin: 2em 0;
   color: white;
   text-align: center;
   border-radius: 10px;
@@ -166,8 +167,8 @@ p {
 /***** COMMENTS *****/
 
 .comments {
-  border: 1px solid black;
-  margin: 0.5em 0 2em 0;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  margin-bottom: 2em;
   padding: 1em;
 }
 
