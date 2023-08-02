@@ -79,6 +79,12 @@ Run this project with:
 - LinkedIn: [Eric Antwi](https://linkedin.com/in/ericopokuantwi)
 
 
+👤 **Naan Mohammed**
+
+- GitHub: [naanmohammed](https://github.com/naanmohammed)
+- Twitter: [Naan](https://twitter.com/_naanahmed)
+- LinkedIn: [Naan Mohammed](https://www.linkedin.com/in/naanahmed)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
