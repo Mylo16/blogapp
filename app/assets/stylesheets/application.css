@@ -21,8 +21,8 @@
   color: black;
 }
 
-main {
-  margin: 10% 12%;
+body {
+  margin: 0%;
 }
 
 a {
@@ -32,6 +32,21 @@ a {
 p {
   margin-block-start: 0;
   margin-block-end: 0;
+}
+
+/***** NAV-BAR *****/
+.nav-bar {
+  box-shadow: 1px 5px 8px 0 rgba(0, 0, 0, 0.52);
+  height: 4em;
+  align-items: center;
+  display: flex;
+}
+
+.nav-links {
+  width: 50%;
+  justify-content: space-between;
+  display: flex;
+  margin: auto;
 }
 
 /***** USERS *****/
