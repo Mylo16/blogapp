@@ -12,7 +12,14 @@ RSpec.describe 'Users Index', type: :system do
 
     visit users_path
   end
-scenario 'index shows the photo of all users' do
+
+  scenario 'index shows the username of all users' do
+    @users.each do |user|
+      expec(page).to have_content(user.name)
+    end
+  end
+
+  scenario 'index shows the photo of all users' do
     @users.each do |user|
       expect(page).to have_selector("img[src$='#{user.photo}']")
     end
@@ -26,7 +33,6 @@ scenario 'index shows the photo of all users' do
 
   scenario 'when click on a user, it redirects to the user profile' do
     click_link @users[1].name
-
     expect(page).to have_current_path(user_path(@users[1]))
-  end
+  end
 end
