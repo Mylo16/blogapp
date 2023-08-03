@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
   def show
     @post = Post.find(params[:id])
   end
@@ -21,6 +23,14 @@ class PostsController < ApplicationController
       flash.now[:alert] = 'Error: Post could not be saved'
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @author = @post.author
+    @author.decrement!(:posts_counter)
+    @post.destroy!
+    redirect_to user_posts_path(id: @author.id), notice: 'Post was deleted successfully'
   end
 
   private
