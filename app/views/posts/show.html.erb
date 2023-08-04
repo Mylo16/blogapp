@@ -6,9 +6,14 @@
     </div>
     <p><%= @post.text %></p>
     <div class="like-comment">
-      <%= link_to "Comment", new_user_post_comment_path(user_id: @post.author_id, post_id: @post.id), class: 'add-comment', method: :get %>
-      <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
-        <%= form.submit "Like", class: "like-btn" %>
+      <% if user_signed_in? %>
+        <%= link_to "Comment", new_user_post_comment_path(user_id: @post.author_id, post_id: @post.id), class: 'add-comment', method: :get %>
+        <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
+          <%= form.submit "Like", class: "like-btn" %>
+        <% end %>
+        <% if can? :destroy, @post %>
+          <%= button_to "Delete", user_post_path(user_id: @post.author.id, post_id: @post.id), method: :delete, class: "add-comment" %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -16,6 +21,9 @@
     <p class="comments-head">Comments</p>
     <% @post.comments.each do |comment|%>
       <%= render partial: 'shared/comment_card', locals: { comment: comment }%>
+      <% if can? :destroy, comment %>
+        <%= button_to "Delete", user_post_comment_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: "add-comment" %>
+      <% end %>
     <% end %>
   </div>
 </div>
