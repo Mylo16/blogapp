@@ -6,33 +6,31 @@ class Api::V1::CommentsController < ApplicationController
     @post = @user.posts.find(params['post_id'])
     @comments = @post.comments
     render json: @comments
-
-    rescue StandardError
-      render json: { error: 'Comment not found' }, status: :bad_request
-    end
+  rescue StandardError
+    render json: { error: 'Comment not found' }, status: :bad_request
   end
+end
 
-  def create
-    token = request.headers['X-Token']
-    user = User.find_by(api_token: token)
-    post = Post.find(params['post_id'])
+def create
+  token = request.headers['X-Token']
+  user = User.find_by(api_token: token)
+  post = Post.find(params['post_id'])
 
-    puts 'Comment'
-    puts 'Comment'
-    puts 'Comment'
-    puts params
+  puts 'Comment'
+  puts 'Comment'
+  puts 'Comment'
+  puts params
 
-    new_comment = post.comments.new(
-      text: params['text'],
-      user:
-    )
+  new_comment = post.comments.new(
+    text: params['text'],
+    user:
+  )
 
-    if new_comment.save
-      render json: { success: 'Comment added successfully' }, status: :created
-    else
-      render json: { error: new_comment.errors.full_messages }, status: :bad_request
-    end
-  rescue StandardError => e
-    render json: { error: e.message }, status: :bad_request
+  if new_comment.save
+    render json: { success: 'Comment added successfully' }, status: :created
+  else
+    render json: { error: new_comment.errors.full_messages }, status: :bad_request
   end
+rescue StandardError => e
+  render json: { error: e.message }, status: :bad_request
 end
